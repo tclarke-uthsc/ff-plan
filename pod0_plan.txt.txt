@@ -1,0 +1,58 @@
+- Flap: 
+    - Flap checks q1h while in ICU, AM and PM needle prick checks***
+    - Continue internal doppler, will remove on POD5
+    - HOB elevated to 30 degrees, head in neutral position
+    - Local wound care: bacitracin BID
+    * No pressure to neck *
+    * No circumferential ties around the face *
+    * NO caffeine, nicotine, vasopressors, diuretics or chocolate throughout entire hospital stay *
+- Neuro: 
+    - Multimodal regimen with scheduled Tylenol, celecoxib, gabapentin, tramadol; PRN oxycodone for breakthrough
+CV: 
+    - Continue A-line
+    - Monitor HR/BP
+    * Do not give PRN blood pressure medications unless SBP is >180. Keep SBP >120 *
+    - Home *** currently held
+- Resp: 
+    - *** sutured in place, keep cuff inflated
+    - Humidified TC, wean to 28% FiO2
+    - Keep obturator at head of bed 
+    - Keep same size trach and once size smaller at bedside 
+    - Suction PRN and q2h
+- GI: 
+    - Abdominal Xray for NG placement - pending*** 
+    - NPO with mIVF
+    - Start continuous TF (impact peptide 1.5) in AM; titrate to goal; appreciate nutrition recs
+    - Bowel regimen: miralax, docusate
+    - GI ulcer ppx: PPI while in ICU
+- Renal/GU: 
+    - Continue Foley; remove on POD1, void check in 6-8h
+    - Monitor I/Os
+    - Daily lytes till POD3; Replace lytes PRN, goals K>4, Mg>2, Phos>4
+    - Continue mIVFs, titrate down as TFs increase
+- ID: 
+    - Unasyn x24h post-op
+    - Daily CBC till POD3
+- Endo: 
+    - IV dexamethasone 8mg q8h x24h post-op
+    - Accuchecks q6h (ACHS once on bolus feeds)
+    - SSI with tight glycemic control
+- MSK: 
+    - POD0 Bedrest
+    - POD1 OOBTC 
+    - POD2+ ambulate TID, PT/OT
+- Heme: 
+    - Monitor Hgb, goal >7
+    - ASA 81 mg daily for 7 days, start on POD1
+    - SCDs at all times
+    - Lovenox DVT ppx, start on POD1
+- Wound: 
+    - Bacitracin to incisions BID
+    - Continue JPs
+    - Continue WV***
+- Home medications restarted
+- Consults: ICU, PT/OT, Nutrition, CM for home supplies and discharge planning, SLP for laryngectomy counseling/electrolarynx teaching
+    - PT/OT: Pending
+    - Nutrition: Pending
+    - CM: Following
+- Dispo: ICU x 48h postop

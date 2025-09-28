@@ -1,0 +1,39 @@
+FREE FLAP PLAN OF THE DAY
+
+Patient: @NAME@
+Date: ***
+MRN: @MRN@
+
+History (one line):
+	***
+
+Planned Procedures:
+***
+
+Anesthesia
+Recommended airway: {Anticipated Airway:35644}
+ETT Positioning: {Tube Position:35648}
+Protected limbs: {Limbs:35645}
+Paralytic ok: {YES/NO:24023}
+Pressors ok: {YES/NO:24023}
+Antibiotics: {Preoperative Abx:35646}
+Expected bloodloss: {Anticipated Bloodloss:35647}
+Predicted postoperative airway: {Anticipated Airway:35644}
+Patient Position: {Patient Positioning:35649}
+Table Position: {Table Position:35650}
+
+Nursing:
+Underbody warmer: {YES/NO:24023}
+Number of setups: {Number of setups:35651}
+Saw: {YES/NO:24023}
+Drill: {YES/NO:24023}
+H&N plating: {YES/NO:24023}
+Extremity plating: {YES/NO:24023}
+Plating company: ***
+Split thickness skin graft: {YES/NO:24023}
+Anticipated trach size: ***
+Wound vac: {YES/NO:24023}
+
+Other Notes:
+	***
+
