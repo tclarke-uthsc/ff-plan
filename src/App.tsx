@@ -127,33 +127,35 @@ function App() {
   const CurrentStepComponent = STEPS[currentStep].component
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <div className="min-h-screen bg-gray-50 py-4 md:py-8">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="mb-8 text-center">
-          <h1 className="text-4xl font-bold text-gray-900 mb-2">Free Flap Planner</h1>
-          <p className="text-gray-600">Generate comprehensive surgical planning documents</p>
+        <div className="mb-6 md:mb-8 text-center">
+          <h1 className="text-2xl md:text-4xl font-bold text-gray-900 mb-2">Free Flap Planner</h1>
+          <p className="text-sm md:text-base text-gray-600">Generate comprehensive surgical planning documents</p>
         </div>
 
         {/* Tab Navigation */}
-        <div className="mb-8">
+        <div className="mb-6 md:mb-8">
           <div className="flex justify-center">
-            <div className="flex bg-white rounded-lg p-1 shadow-sm border">
+            <div className="flex bg-white rounded-lg p-1 shadow-sm border w-full max-w-md">
               <Button
                 variant={activeTab === "form" ? "default" : "ghost"}
                 onClick={() => setActiveTab("form")}
-                className="flex items-center gap-2"
+                className="flex items-center gap-1 md:gap-2 flex-1 text-xs md:text-sm"
               >
-                <FormInput className="h-4 w-4" />
-                Form
+                <FormInput className="h-3 w-3 md:h-4 md:w-4" />
+                <span className="hidden sm:inline">Form</span>
+                <span className="sm:hidden">Form</span>
               </Button>
               <Button
                 variant={activeTab === "visualizer" ? "default" : "ghost"}
                 onClick={() => setActiveTab("visualizer")}
-                className="flex items-center gap-2"
+                className="flex items-center gap-1 md:gap-2 flex-1 text-xs md:text-sm"
               >
-                <Eye className="h-4 w-4" />
-                Plan Visualizer
+                <Eye className="h-3 w-3 md:h-4 md:w-4" />
+                <span className="hidden sm:inline">Plan Visualizer</span>
+                <span className="sm:hidden">Visualizer</span>
               </Button>
             </div>
           </div>
@@ -163,12 +165,12 @@ function App() {
         {activeTab === "form" ? (
           <>
             {/* Progress Indicator */}
-            <div className="mb-8">
-              <div className="flex items-center justify-center space-x-4">
+            <div className="mb-6 md:mb-8">
+              <div className="flex items-center justify-center space-x-2 md:space-x-4 overflow-x-auto pb-2">
                 {STEPS.map((step, index) => (
-                  <div key={step.id} className="flex items-center">
+                  <div key={step.id} className="flex items-center flex-shrink-0">
                     <div
-                      className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${
+                      className={`w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center text-xs md:text-sm font-medium ${
                         index <= currentStep
                           ? "bg-primary text-primary-foreground"
                           : "bg-gray-200 text-gray-500"
@@ -177,7 +179,7 @@ function App() {
                       {index + 1}
                     </div>
                     <span
-                      className={`ml-2 text-sm font-medium ${
+                      className={`ml-1 md:ml-2 text-xs md:text-sm font-medium hidden sm:block ${
                         index <= currentStep ? "text-primary" : "text-gray-500"
                       }`}
                     >
@@ -185,7 +187,7 @@ function App() {
                     </span>
                     {index < STEPS.length - 1 && (
                       <div
-                        className={`w-8 h-0.5 mx-4 ${
+                        className={`w-4 md:w-8 h-0.5 mx-2 md:mx-4 ${
                           index < currentStep ? "bg-primary" : "bg-gray-200"
                         }`}
                       />
@@ -196,40 +198,42 @@ function App() {
             </div>
 
             {/* Step Content */}
-            <div className="mb-8">
+            <div className="mb-6 md:mb-8">
               <CurrentStepComponent />
             </div>
 
             {/* Navigation */}
-            <div className="flex justify-between items-center">
+            <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
               <Button
                 variant="outline"
                 onClick={handlePrevious}
                 disabled={currentStep === 0}
-                className="flex items-center gap-2"
+                className="flex items-center gap-2 w-full sm:w-auto"
               >
                 <ChevronLeft className="h-4 w-4" />
                 Previous
               </Button>
 
-              <div className="flex gap-2">
-                <Button variant="outline" onClick={handleReset} className="flex items-center gap-2">
+              <div className="flex gap-2 w-full sm:w-auto">
+                <Button variant="outline" onClick={handleReset} className="flex items-center gap-2 flex-1 sm:flex-none">
                   <RotateCcw className="h-4 w-4" />
-                  Reset
+                  <span className="hidden sm:inline">Reset</span>
                 </Button>
                 
                 {currentStep === STEPS.length - 1 ? (
                   <Button
                     onClick={handleGenerateNotes}
                     disabled={isGenerating}
-                    className="flex items-center gap-2"
+                    className="flex items-center gap-2 flex-1 sm:flex-none"
                   >
                     <FileText className="h-4 w-4" />
-                    {isGenerating ? "Generating..." : "Generate Notes"}
+                    <span className="hidden sm:inline">{isGenerating ? "Generating..." : "Generate Notes"}</span>
+                    <span className="sm:hidden">{isGenerating ? "..." : "Generate"}</span>
                   </Button>
                 ) : (
-                  <Button onClick={handleNext} className="flex items-center gap-2">
-                    Next
+                  <Button onClick={handleNext} className="flex items-center gap-2 flex-1 sm:flex-none">
+                    <span className="hidden sm:inline">Next</span>
+                    <span className="sm:hidden">Next</span>
                     <ChevronRight className="h-4 w-4" />
                   </Button>
                 )}

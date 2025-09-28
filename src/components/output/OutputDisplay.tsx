@@ -53,19 +53,19 @@ export function OutputDisplay({ planOfDay, postOpCourse }: OutputDisplayProps) {
     <div className="w-full max-w-6xl mx-auto">
       <Card>
         <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <FileText className="h-5 w-5" />
+          <CardTitle className="flex items-center gap-2 text-lg md:text-xl">
+            <FileText className="h-4 w-4 md:h-5 md:w-5" />
             Generated Notes
           </CardTitle>
         </CardHeader>
         <CardContent>
           {/* Tab Navigation */}
-          <div className="flex space-x-1 mb-6 border-b">
+          <div className="flex space-x-1 mb-4 md:mb-6 border-b overflow-x-auto">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`px-4 py-2 text-sm font-medium border-b-2 transition-colors ${
+                className={`px-3 md:px-4 py-2 text-xs md:text-sm font-medium border-b-2 transition-colors whitespace-nowrap ${
                   activeTab === tab.id
                     ? "border-primary text-primary"
                     : "border-transparent text-muted-foreground hover:text-foreground"
@@ -78,11 +78,11 @@ export function OutputDisplay({ planOfDay, postOpCourse }: OutputDisplayProps) {
 
           {/* Tab Content */}
           <div className="space-y-4">
-            <div className="flex justify-between items-center">
-              <p className="text-sm text-gray-600">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+              <p className="text-xs md:text-sm text-gray-600">
                 Click "Copy" to copy formatted text for Epic, or "Select All" to manually select and copy
               </p>
-              <div className="flex gap-2">
+              <div className="flex gap-2 flex-wrap">
                 <Button
                   variant="outline"
                   size="sm"
@@ -96,34 +96,35 @@ export function OutputDisplay({ planOfDay, postOpCourse }: OutputDisplayProps) {
                       selection?.addRange(range)
                     }
                   }}
-                  className="flex items-center gap-2"
+                  className="flex items-center gap-1 md:gap-2 text-xs md:text-sm"
                 >
-                  Select All
+                  <span className="hidden sm:inline">Select All</span>
+                  <span className="sm:hidden">Select</span>
                 </Button>
                 <Button
                   variant="outline"
                   size="sm"
                   onClick={() => handleCopy(activeTabData.content, activeTabData.label)}
-                  className="flex items-center gap-2"
+                  className="flex items-center gap-1 md:gap-2 text-xs md:text-sm"
                 >
-                  <Copy className="h-4 w-4" />
-                  Copy
+                  <Copy className="h-3 w-3 md:h-4 md:w-4" />
+                  <span className="hidden sm:inline">Copy</span>
                 </Button>
                 <Button
                   variant="outline"
                   size="sm"
                   onClick={() => handleExport(activeTabData.content, activeTabData.filename)}
-                  className="flex items-center gap-2"
+                  className="flex items-center gap-1 md:gap-2 text-xs md:text-sm"
                 >
-                  <Download className="h-4 w-4" />
-                  Export
+                  <Download className="h-3 w-3 md:h-4 md:w-4" />
+                  <span className="hidden sm:inline">Export</span>
                 </Button>
               </div>
             </div>
 
             <div 
               id="rich-text-editor"
-              className="min-h-[600px] p-4 border border-gray-300 rounded-md bg-white overflow-auto prose max-w-none"
+              className="min-h-[400px] md:min-h-[600px] p-3 md:p-4 border border-gray-300 rounded-md bg-white overflow-auto prose max-w-none text-sm md:text-base"
               style={{ 
                 fontFamily: 'system-ui, -apple-system, sans-serif',
                 lineHeight: '1.6'

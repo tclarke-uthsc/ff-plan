@@ -76,10 +76,10 @@ export function PatientStep() {
   return (
     <Card className="w-full max-w-2xl mx-auto">
       <CardHeader>
-        <CardTitle>Patient Information</CardTitle>
+        <CardTitle className="text-lg md:text-xl">Patient Information</CardTitle>
       </CardHeader>
       <CardContent>
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="name">Patient Name *</Label>
@@ -140,12 +140,12 @@ export function PatientStep() {
             {getProcedures().length > 0 && (
               <div className="flex flex-wrap gap-2 mb-2">
                 {getProcedures().map((procedure, index) => (
-                  <Badge key={index} variant="secondary" className="flex items-center gap-1">
-                    {procedure}
+                  <Badge key={index} variant="secondary" className="flex items-center gap-1 text-xs">
+                    <span className="truncate max-w-[200px]">{procedure}</span>
                     <button
                       type="button"
                       onClick={() => removeProcedure(procedure)}
-                      className="ml-1 hover:bg-gray-300 rounded-full p-0.5"
+                      className="ml-1 hover:bg-gray-300 rounded-full p-0.5 flex-shrink-0"
                     >
                       <X className="h-3 w-3" />
                     </button>

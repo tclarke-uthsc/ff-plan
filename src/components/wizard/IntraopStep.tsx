@@ -55,14 +55,14 @@ export function IntraopStep() {
   return (
     <Card className="w-full max-w-4xl mx-auto">
       <CardHeader>
-        <CardTitle>Intraoperative Planning</CardTitle>
+        <CardTitle className="text-lg md:text-xl">Intraoperative Planning</CardTitle>
       </CardHeader>
       <CardContent>
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
             {/* Anesthesia Section */}
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold">Anesthesia</h3>
+              <h3 className="text-base md:text-lg font-semibold">Anesthesia</h3>
               
               <div className="space-y-2">
                 <Label htmlFor="anticipatedAirway">Anticipated Airway *</Label>
@@ -215,7 +215,7 @@ export function IntraopStep() {
 
             {/* Nursing Section */}
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold">Nursing & Equipment</h3>
+              <h3 className="text-base md:text-lg font-semibold">Nursing & Equipment</h3>
               
               <div className="space-y-2">
                 <Label htmlFor="numberOfSetups">Number of Setups *</Label>

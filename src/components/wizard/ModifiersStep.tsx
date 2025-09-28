@@ -38,13 +38,13 @@ export function ModifiersStep() {
   return (
     <Card className="w-full max-w-2xl mx-auto">
       <CardHeader>
-        <CardTitle>Case Modifiers</CardTitle>
+        <CardTitle className="text-lg md:text-xl">Case Modifiers</CardTitle>
       </CardHeader>
       <CardContent>
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-gray-900">Reconstruction Type</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <h3 className="text-base md:text-lg font-semibold text-gray-900">Reconstruction Type</h3>
+            <div className="grid grid-cols-1 gap-4">
               <div className="flex items-center space-x-2">
                 <Checkbox
                   id="oralCavityAerodigestive"
@@ -85,8 +85,8 @@ export function ModifiersStep() {
               {errors.tracheostomy && <p className="text-sm text-red-500">{errors.tracheostomy}</p>}
             </div>
 
-            <h3 className="text-lg font-semibold text-gray-900 mt-6">Medical History</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <h3 className="text-base md:text-lg font-semibold text-gray-900 mt-6">Medical History</h3>
+            <div className="grid grid-cols-1 gap-4">
               <div className="flex items-center space-x-2">
                 <Checkbox
                   id="priorRadiation"
@@ -145,8 +145,8 @@ export function ModifiersStep() {
           {(modifiers.oralCavityAerodigestive || modifiers.laryngectomy || modifiers.tracheostomy || 
             modifiers.priorRadiation || modifiers.diabetes || modifiers.traumaRecon || modifiers.gTube) && (
             <div className="mt-6 p-4 bg-yellow-50 rounded-lg">
-              <h4 className="font-medium text-yellow-900 mb-2">Modifier Considerations</h4>
-              <ul className="text-sm text-yellow-800 space-y-1">
+              <h4 className="font-medium text-yellow-900 mb-2 text-sm md:text-base">Modifier Considerations</h4>
+              <ul className="text-xs md:text-sm text-yellow-800 space-y-1">
                 {modifiers.oralCavityAerodigestive && (
                   <li>• NPO protocol will be adjusted for oral cavity reconstruction</li>
                 )}

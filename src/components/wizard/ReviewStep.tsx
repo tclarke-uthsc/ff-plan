@@ -18,10 +18,10 @@ export function ReviewStep() {
         <CardHeader>
           <CardTitle>Review Case Information</CardTitle>
         </CardHeader>
-        <CardContent className="space-y-6">
+        <CardContent className="space-y-4 md:space-y-6">
           {/* Patient Information */}
           <div>
-            <h3 className="text-lg font-semibold mb-3">Patient Information</h3>
+            <h3 className="text-base md:text-lg font-semibold mb-3">Patient Information</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
               <div>
                 <span className="font-medium">Name:</span> {patient.name}
@@ -44,7 +44,7 @@ export function ReviewStep() {
 
           {/* Attending & Flap */}
           <div>
-            <h3 className="text-lg font-semibold mb-3">Attending & Flap</h3>
+            <h3 className="text-base md:text-lg font-semibold mb-3">Attending & Flap</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
               <div>
                 <span className="font-medium">Attending:</span> {attendingFlap.reconstructiveSurgeon}
@@ -57,7 +57,7 @@ export function ReviewStep() {
 
           {/* Modifiers */}
           <div>
-            <h3 className="text-lg font-semibold mb-3">Modifiers</h3>
+            <h3 className="text-base md:text-lg font-semibold mb-3">Modifiers</h3>
             <div className="text-sm">
               <span className="font-medium">Case Modifiers:</span> {getModifiersText()}
             </div>
@@ -65,8 +65,8 @@ export function ReviewStep() {
 
           {/* Intraoperative Planning */}
           <div>
-            <h3 className="text-lg font-semibold mb-3">Intraoperative Planning</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <h3 className="text-base md:text-lg font-semibold mb-3">Intraoperative Planning</h3>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
               <div className="space-y-3">
                 <h4 className="font-medium">Anesthesia</h4>
                 <div className="space-y-2 text-sm">

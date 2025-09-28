@@ -45,10 +45,10 @@ export function AttendingFlapStep() {
   return (
     <Card className="w-full max-w-2xl mx-auto">
       <CardHeader>
-        <CardTitle>Attending & Flap Type</CardTitle>
+        <CardTitle className="text-lg md:text-xl">Attending & Flap Type</CardTitle>
       </CardHeader>
       <CardContent>
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
           <div className="space-y-2">
             <Label htmlFor="flap">Flap Type *</Label>
             <Select

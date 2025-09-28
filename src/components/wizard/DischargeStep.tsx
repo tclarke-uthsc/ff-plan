@@ -38,13 +38,13 @@ export function DischargeStep() {
   return (
     <Card className="w-full max-w-4xl mx-auto">
       <CardHeader>
-        <CardTitle>Discharge Planning</CardTitle>
+        <CardTitle className="text-lg md:text-xl">Discharge Planning</CardTitle>
       </CardHeader>
       <CardContent>
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold">Follow-up Appointments</h3>
+              <h3 className="text-base md:text-lg font-semibold">Follow-up Appointments</h3>
               
               <div className="space-y-2">
                 <Label htmlFor="ablativeFollowUp">Ablative Surgeon Follow-up</Label>
@@ -95,7 +95,7 @@ export function DischargeStep() {
           </div>
 
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Additional Instructions</h3>
+            <h3 className="text-base md:text-lg font-semibold">Additional Instructions</h3>
             
             <div className="space-y-2">
               <Label htmlFor="homeCare">Home Care Instructions</Label>

@@ -137,30 +137,31 @@ export function PlanVisualizer() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 md:space-y-6">
       <div className="text-center">
-        <h2 className="text-2xl font-bold text-gray-900 mb-2">Attending Preference Playground</h2>
-        <p className="text-gray-600">Verify your preferences and see how they modify the base plan</p>
+        <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">Attending Preference Playground</h2>
+        <p className="text-sm md:text-base text-gray-600">Verify your preferences and see how they modify the base plan</p>
       </div>
 
       {/* Controls */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Eye className="h-5 w-5" />
+          <CardTitle className="flex items-center gap-2 text-lg md:text-xl">
+            <Eye className="h-4 w-4 md:h-5 md:w-5" />
             Test Your Preferences
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
             <div>
               <label className="block text-sm font-medium mb-2">Select Your Name</label>
-              <div className="flex gap-2 flex-wrap">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                 {SURGEON_OPTIONS.map((surgeon) => (
                   <Button
                     key={surgeon}
                     variant={selectedAttending === surgeon ? "default" : "outline"}
                     size="sm"
                     onClick={() => setSelectedAttending(surgeon)}
+                    className="text-xs md:text-sm"
                   >
                     {surgeon}
                   </Button>
@@ -170,13 +171,14 @@ export function PlanVisualizer() {
 
             <div>
               <label className="block text-sm font-medium mb-2">Select Flap Type</label>
-              <div className="flex gap-2 flex-wrap">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
                 {FLAP_OPTIONS.map((flapType) => (
                   <Button
                     key={flapType}
                     variant={selectedFlap === flapType ? "default" : "outline"}
                     size="sm"
                     onClick={() => setSelectedFlap(flapType)}
+                    className="text-xs md:text-sm"
                   >
                     {flapType}
                   </Button>
@@ -187,7 +189,7 @@ export function PlanVisualizer() {
           <div>
             <label className="block text-sm font-medium mb-2">Add Patient Modifiers</label>
             <p className="text-xs text-gray-500 mb-2">Toggle modifiers to see how they affect your plan</p>
-            <div className="flex gap-2 flex-wrap">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
               {Object.keys(selectedModifiers).map((modifier) => (
                 <Button
                   key={modifier}
@@ -197,6 +199,7 @@ export function PlanVisualizer() {
                     ...prev,
                     [modifier]: !prev[modifier]
                   }))}
+                  className="text-xs md:text-sm"
                 >
                   {modifier.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}
                 </Button>
