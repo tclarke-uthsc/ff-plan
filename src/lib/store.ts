@@ -1,6 +1,6 @@
 import { create } from "zustand"
 import { persist } from "zustand/middleware"
-import type { FormData, PatientData, AttendingFlapData, ModifiersData, IntraopData, DischargeData } from "./types"
+import type { PatientData, AttendingFlapData, ModifiersData, IntraopData, DischargeData } from "./types"
 
 interface FormStore {
   // Form data
@@ -16,7 +16,6 @@ interface FormStore {
   generatedNotes: {
     planOfDay: string
     postOpCourse: string
-    progressNote: string
   } | null
   
   // Actions
@@ -27,7 +26,7 @@ interface FormStore {
   updateDischarge: (data: Partial<DischargeData>) => void
   setCurrentStep: (step: number) => void
   setGenerating: (generating: boolean) => void
-  setGeneratedNotes: (notes: { planOfDay: string; postOpCourse: string; progressNote: string }) => void
+  setGeneratedNotes: (notes: { planOfDay: string; postOpCourse: string }) => void
   reset: () => void
 }
 

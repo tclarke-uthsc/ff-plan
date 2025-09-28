@@ -4,7 +4,6 @@ import { patientSchema } from "../../lib/types"
 import type { PatientData } from "../../lib/types"
 import { COMMON_PROCEDURES } from "../../lib/config"
 import { Input } from "../ui/input"
-import { Select } from "../ui/select"
 import { Label } from "../ui/label"
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card"
 import { Badge } from "../ui/badge"
@@ -23,7 +22,7 @@ export function PatientStep() {
     e.preventDefault()
     
     try {
-      const validatedData = patientSchema.parse(patient)
+      patientSchema.parse(patient)
       setErrors({})
       // Form is valid, parent will handle navigation
     } catch (error: any) {

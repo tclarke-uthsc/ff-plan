@@ -2,7 +2,6 @@ import { useState } from "react"
 import { useFormStore } from "../../lib/store"
 import { dischargeSchema } from "../../lib/types"
 import type { DischargeData } from "../../lib/types"
-import { Button } from "../ui/button"
 import { Input } from "../ui/input"
 import { Textarea } from "../ui/textarea"
 import { Label } from "../ui/label"
@@ -16,7 +15,7 @@ export function DischargeStep() {
     e.preventDefault()
     
     try {
-      const validatedData = dischargeSchema.parse(discharge)
+      dischargeSchema.parse(discharge)
       setErrors({})
       // Form is valid, parent will handle navigation
     } catch (error: any) {

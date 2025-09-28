@@ -1,7 +1,5 @@
 import { useFormStore } from "../../lib/store"
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card"
-import { Button } from "../ui/button"
-import { Badge } from "../ui/badge"
 
 export function ReviewStep() {
   const { patient, attendingFlap, modifiers, intraop } = useFormStore()
@@ -49,7 +47,7 @@ export function ReviewStep() {
             <h3 className="text-lg font-semibold mb-3">Attending & Flap</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
               <div>
-                <span className="font-medium">Attending:</span> {attendingFlap.attending}
+                <span className="font-medium">Attending:</span> {attendingFlap.reconstructiveSurgeon}
               </div>
               <div>
                 <span className="font-medium">Flap Type:</span> {attendingFlap.flap}

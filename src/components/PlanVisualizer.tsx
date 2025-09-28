@@ -334,7 +334,7 @@ export function PlanVisualizer() {
                 Extremity Care
               </Badge>
               <ArrowRight className="h-4 w-4 text-gray-400 shrink-0 mt-0.5" />
-              <span className="text-sm">{ATTENDING_PREFERENCES[attendingKey].flapPreferences[flap]?.extremityCare || flapConfig.extremityCare}</span>
+              <span className="text-sm">{ATTENDING_PREFERENCES[attendingKey].flapPreferences[flap as keyof typeof ATTENDING_PREFERENCES[typeof attendingKey]['flapPreferences']]?.extremityCare || flapConfig.extremityCare}</span>
             </div>
             <div className="flex items-start gap-2 p-2 bg-white rounded border">
               <Badge variant="outline" className="text-xs shrink-0">
@@ -348,7 +348,7 @@ export function PlanVisualizer() {
                 Wound Care
               </Badge>
               <ArrowRight className="h-4 w-4 text-gray-400 shrink-0 mt-0.5" />
-              <span className="text-sm">{ATTENDING_PREFERENCES[attendingKey].flapPreferences[flap]?.woundCare || "Standard wound care"}</span>
+              <span className="text-sm">{ATTENDING_PREFERENCES[attendingKey].flapPreferences[flap as keyof typeof ATTENDING_PREFERENCES[typeof attendingKey]['flapPreferences']]?.woundCare || "Standard wound care"}</span>
             </div>
           </div>
         </CardContent>

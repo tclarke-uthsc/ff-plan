@@ -15,8 +15,6 @@ import {
   PLATING_COMPANY_OPTIONS,
   TRACHEOSTOMY_SIZE_OPTIONS
 } from "../../lib/config"
-import { Button } from "../ui/button"
-import { Input } from "../ui/input"
 import { Select } from "../ui/select"
 import { Label } from "../ui/label"
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card"
@@ -34,7 +32,7 @@ export function IntraopStep() {
     e.preventDefault()
     
     try {
-      const validatedData = intraopSchema.parse(intraop)
+      intraopSchema.parse(intraop)
       setErrors({})
       // Form is valid, parent will handle navigation
     } catch (error: any) {

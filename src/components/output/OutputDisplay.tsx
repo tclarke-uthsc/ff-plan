@@ -3,7 +3,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "../ui/card"
 import { Button } from "../ui/button"
 import { Copy, Download, FileText } from "lucide-react"
 import { toast } from "sonner"
-import copy from "copy-to-clipboard"
 import { saveAs } from "file-saver"
 
 interface OutputDisplayProps {

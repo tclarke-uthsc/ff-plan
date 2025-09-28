@@ -14,29 +14,6 @@ function getModifiersText(modifiers: any): string {
 }
 
 
-function getNpoDuration(modifiers: any): string {
-  if (modifiers.priorRadiation) return "14 days (post-XRT)"
-  if (modifiers.laryngectomy) return "7 days (laryngectomy)"
-  return "5 days (non-irradiated oral cavity)"
-}
-
-function getSwallowStudyRequirement(modifiers: any): string {
-  if (modifiers.oralCavityAerodigestive && !modifiers.priorRadiation) {
-    return "Bedside swallow (non-irradiated)"
-  }
-  if (modifiers.laryngectomy && !modifiers.priorRadiation) {
-    return "Esophagram POD 7 (non-irradiated)"
-  }
-  return ""
-}
-
-function getStapleRemovalText(prefs: any, modifiers: any): string {
-  const neckTiming = modifiers.priorRadiation ? prefs.stapleRemoval.neck.radiated : prefs.stapleRemoval.neck.nonIrradiated
-  if (prefs.stapleRemoval.leg) {
-    return `Neck: ${neckTiming}, Leg: ${prefs.stapleRemoval.leg}, Other: ${prefs.stapleRemoval.other}`
-  }
-  return `Neck: ${neckTiming}, Other: ${prefs.stapleRemoval.other}`
-}
 
 // Helper function to generate plan sections with attending and modifier overrides
 function generatePlanSection(sectionKey: keyof typeof BASE_PLAN, attending: Attending, modifiers: any, flapType?: string): string {
@@ -129,7 +106,7 @@ export function generatePlanOfDay(data: FormData): string {
   const flap = attendingFlap.flap
   
   // Determine wound vac preference based on attending and flap type
-  let woundVacNote = intraop.woundVac
+  let woundVacNote: string = intraop.woundVac
   if (attendingPrefs.woundVacPreferences) {
     if (flap === "RFFF" && attendingPrefs.woundVacPreferences.rfff) {
       woundVacNote = `${intraop.woundVac} (${attendingPrefs.woundVacPreferences.rfff})`
@@ -195,7 +172,7 @@ export function generatePostOpCourse(data: FormData): string {
   
   Object.entries(BASE_PLAN).forEach(([sectionKey, section]) => {
     const content = generatePlanSection(sectionKey as keyof typeof BASE_PLAN, attending, modifiers, flap)
-    const hasOverrides = getOverrideSource(sectionKey as keyof typeof BASE_PLAN, attending, modifiers, flap).type !== "base"
+    const hasOverrides = getOverrideSource(sectionKey as keyof typeof BASE_PLAN, attending, modifiers).type !== "base"
     
     planSections += `
 <div style="margin-bottom: 1rem; padding: 1rem; border: 1px solid #e5e7eb; border-radius: 0.5rem; ${hasOverrides ? 'background-color: #eff6ff; border-color: #93c5fd;' : 'background-color: #f9fafb;'}">
@@ -233,7 +210,7 @@ ${planSections}
 }
 
 // Helper function to get override source (similar to Plan Visualizer)
-function getOverrideSource(sectionKey: keyof typeof BASE_PLAN, attending: Attending, modifiers: any, flap?: string) {
+function getOverrideSource(sectionKey: keyof typeof BASE_PLAN, attending: Attending, modifiers: any) {
   const prefs = ATTENDING_PREFERENCES[attending]
   
   // Check for G tube first (highest priority)

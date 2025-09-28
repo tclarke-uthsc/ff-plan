@@ -2,10 +2,8 @@ import { useState } from "react"
 import { useFormStore } from "../../lib/store"
 import { modifiersSchema } from "../../lib/types"
 import type { ModifiersData } from "../../lib/types"
-import { Button } from "../ui/button"
 import { Checkbox } from "../ui/checkbox"
 import { Label } from "../ui/label"
-import { Select } from "../ui/select"
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card"
 
 export function ModifiersStep() {
@@ -16,7 +14,7 @@ export function ModifiersStep() {
     e.preventDefault()
     
     try {
-      const validatedData = modifiersSchema.parse(modifiers)
+      modifiersSchema.parse(modifiers)
       setErrors({})
       // Form is valid, parent will handle navigation
     } catch (error: any) {

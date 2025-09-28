@@ -1,7 +1,7 @@
 import { z } from "zod"
 
 export const attendingSchema = z.enum(["Gleysteen", "Eid", "Wood"])
-export const flapTypeSchema = z.enum(["ALT", "Fibula", "RFFF", "Scapula", "Jejunal", "Other"])
+export const flapTypeSchema = z.enum(["ALT", "Fibula", "RFFF", "Scapula", "Jejunal", "LatissimusDorsi", "Other"])
 export const yesNoSchema = z.enum(["Yes", "No"])
 
 export const patientSchema = z.object({
